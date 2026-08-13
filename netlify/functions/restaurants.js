@@ -1,4 +1,5 @@
 exports.handler = async function () {
+
     const query = `
         [out:json][timeout:30];
 
@@ -13,21 +14,30 @@ exports.handler = async function () {
     `;
 
     try {
+
         const url =
             "https://overpass-api.de/api/interpreter?data=" +
             encodeURIComponent(query);
 
-        const response = await fetch(url);
+        const response = await fetch(url, {
+            method: "GET",
+            headers: {
+                "Accept": "application/json"
+            }
+        });
+
+        const text = await response.text();
 
         if (!response.ok) {
-            const text = await response.text();
 
             return {
                 statusCode: response.status,
+
                 headers: {
                     "Content-Type": "application/json",
                     "Access-Control-Allow-Origin": "*"
                 },
+
                 body: JSON.stringify({
                     error: `Overpass HTTP ${response.status}`,
                     details: text
@@ -35,24 +45,36 @@ exports.handler = async function () {
             };
         }
 
-        const data = await response.json();
+        const data = JSON.parse(text);
 
         return {
+
             statusCode: 200,
+
             headers: {
                 "Content-Type": "application/json",
                 "Access-Control-Allow-Origin": "*"
             },
+
             body: JSON.stringify(data)
         };
 
     } catch (error) {
+
+        console.error(
+            "Overpass proxy error:",
+            error
+        );
+
         return {
+
             statusCode: 500,
+
             headers: {
                 "Content-Type": "application/json",
                 "Access-Control-Allow-Origin": "*"
             },
+
             body: JSON.stringify({
                 error: "Unable to load restaurants",
                 message: error.message
