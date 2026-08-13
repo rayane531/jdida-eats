@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jdida Eats — Discover El Jadida</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="container header-inner">
+
+            <a href="#" class="logo">
+                <span class="logo-icon">🍴</span>
+                <span>Jdida<span class="logo-highlight">Eats</span></span>
+            </a>
+
+            <nav class="nav">
+                <a href="#restaurants">Restaurants</a>
+                <a href="#categories">Categories</a>
+                <a href="#about">About</a>
+            </nav>
+
+            <button class="location-btn">
+                📍 El Jadida
+            </button>
+
+            <button class="menu-btn">
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= HOME PAGE ================= -->
+
+    <div id="homePage">
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <div class="hero-content container">
+
+                <span class="hero-badge">
+                    🍽️ EL JADIDA FOOD GUIDE
+                </span>
+
+                <h1>
+                    Discover the best
+                    <span>food in El Jadida.</span>
+                </h1>
+
+                <p>
+                    Find restaurants, cafés and hidden gems around El Jadida.
+                </p>
+
+                <div class="search-box">
+
+                    <span class="search-icon">⌕</span>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search restaurants, food or locations..."
+                    >
+
+                    <button id="searchBtn">
+                        Search
+                    </button>
+
+                </div>
+
+                <div class="hero-info">
+
+                    <span>🍴 Restaurants</span>
+                    <span>⭐ Ratings</span>
+                    <span>📍 Local places</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CATEGORIES -->
+
+        <section class="categories-section" id="categories">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="small-title">
+                            EXPLORE
+                        </span>
+
+                        <h2>
+                            What are you craving?
+                        </h2>
+                    </div>
+
+                </div>
+
+                <div class="categories">
+
+                    <button class="category active" data-category="all">
+                        <span>🍽️</span>
+                        <strong>All</strong>
+                    </button>
+
+                    <button class="category" data-category="Burgers">
+                        <span>🍔</span>
+                        <strong>Burgers</strong>
+                    </button>
+
+                    <button class="category" data-category="Tacos">
+                        <span>🌮</span>
+                        <strong>Tacos</strong>
+                    </button>
+
+                    <button class="category" data-category="Pizza">
+                        <span>🍕</span>
+                        <strong>Pizza</strong>
+                    </button>
+
+                    <button class="category" data-category="Moroccan">
+                        <span>🥘</span>
+                        <strong>Moroccan</strong>
+                    </button>
+
+                    <button class="category" data-category="Seafood">
+                        <span>🐟</span>
+                        <strong>Seafood</strong>
+                    </button>
+
+                    <button class="category" data-category="Café">
+                        <span>☕</span>
+                        <strong>Cafés</strong>
+                    </button>
+
+                    <button class="category" data-category="Desserts">
+                        <span>🍰</span>
+                        <strong>Desserts</strong>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RESTAURANTS -->
+
+        <main class="restaurants-section" id="restaurants">
+
+            <div class="container">
+
+                <div class="restaurants-top">
+
+                    <div>
+
+                        <span class="small-title">
+                            NEAR YOU
+                        </span>
+
+                        <h2>
+                            Restaurants in El Jadida
+                        </h2>
+
+                        <p id="resultCount">
+                            Showing restaurants
+                        </p>
+
+                    </div>
+
+                    <button class="filter-btn" id="filterBtn">
+                        ☷ Filters
+                        <span
+                            class="filter-count"
+                            id="filterCount">
+                            0
+                        </span>
+                    </button>
+
+                </div>
+
+
+                <!-- FILTER -->
+
+                <div class="filter-panel" id="filterPanel">
+
+                    <div class="filter-header">
+
+                        <h3>
+                            Filters
+                        </h3>
+
+                        <button id="closeFilter">
+                            ✕
+                        </button>
+
+                    </div>
+
+                    <div class="filter-content">
+
+                        <div class="filter-group">
+
+                            <label>
+                                Rating
+                            </label>
+
+                            <select id="ratingFilter">
+
+                                <option value="0">
+                                    Any rating
+                                </option>
+
+                                <option value="4">
+                                    4.0+
+                                </option>
+
+                                <option value="4.5">
+                                    4.5+
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="filter-group">
+
+                            <label>
+                                Price
+                            </label>
+
+                            <div class="price-options">
+
+                                <button
+                                    class="price-option active"
+                                    data-price="all">
+                                    Any
+                                </button>
+
+                                <button
+                                    class="price-option"
+                                    data-price="€">
+                                    €
+                                </button>
+
+                                <button
+                                    class="price-option"
+                                    data-price="€€">
+                                    €€
+                                </button>
+
+                                <button
+                                    class="price-option"
+                                    data-price="€€€">
+                                    €€€
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="filter-group">
+
+                            <label class="checkbox-label">
+
+                                <input
+                                    type="checkbox"
+                                    id="openFilter">
+
+                                <span>
+                                    Open restaurants only
+                                </span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="filter-actions">
+
+                            <button
+                                class="clear-btn"
+                                id="clearFilters">
+                                Clear
+                            </button>
+
+                            <button
+                                class="apply-btn"
+                                id="applyFilters">
+                                Apply Filters
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RESTAURANT GRID -->
+
+                <div
+                    class="restaurant-grid"
+                    id="restaurantGrid">
+                </div>
+
+
+                <div
+                    class="no-results"
+                    id="noResults">
+
+                    <div>
+                        😕
+                    </div>
+
+                    <h3>
+                        No restaurants found
+                    </h3>
+
+                    <p>
+                        Try changing your search or filters.
+                    </p>
+
+                    <button id="resetSearch">
+                        Reset search
+                    </button>
+
+                </div>
+
+            </div>
+
+        </main>
+
+
+        <!-- ABOUT -->
+
+        <section
+            class="about-section"
+            id="about">
+
+            <div class="container about-content">
+
+                <div>
+
+                    <span class="small-title">
+                        MADE FOR JDIDA
+                    </span>
+
+                    <h2>
+                        Your city.<br>
+                        Your food.
+                    </h2>
+
+                </div>
+
+                <p>
+                    Jdida Eats is a local restaurant discovery
+                    platform designed to make finding your next
+                    meal in El Jadida easier, faster and more
+                    enjoyable.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            <div class="container footer-content">
+
+                <div class="footer-logo">
+                    🍴 Jdida<span>Eats</span>
+                </div>
+
+                <p>
+                    Discover El Jadida, one restaurant at a time.
+                </p>
+
+                <div class="footer-bottom">
+                    © 2026 Jdida Eats
+                </div>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+
+    <!-- ================= RESTAURANT PAGE ================= -->
+
+    <section
+        class="restaurant-page"
+        id="restaurantPage">
+
+        <div class="container">
+
+            <!-- BACK BUTTON -->
+
+            <button
+                class="back-button"
+                id="backButton">
+
+                ← Back to restaurants
+
+            </button>
+
+
+            <!-- HERO IMAGE -->
+
+            <div class="restaurant-page-image">
+
+                <img
+                    id="pageImage"
+                    src=""
+                    alt="Restaurant">
+
+                <div
+                    class="page-status"
+                    id="pageStatus">
+                </div>
+
+            </div>
+
+
+            <!-- RESTAURANT INFORMATION -->
+
+<div class="restaurant-page-content">
+
+    <div class="restaurant-main-info">
+
+        <span
+            class="page-category"
+            id="pageCategory">
+        </span>
+
+        <span
+            id="pageCuisine"
+            class="page-cuisine"
+            style="display: none;">
+        </span>
+
+        <h1 id="pageName">
+        </h1>
+
+        <div
+            class="page-rating"
+            id="pageRating">
+        </div>
+
+        <p
+            class="page-description"
+            id="pageDescription">
+        </p>
+
+    </div>
+
+
+                <!-- QUICK ACTIONS -->
+
+                <div class="quick-actions">
+
+                    <button
+                        class="call-button"
+                        id="callButton">
+
+                        📞
+                        <span>Call</span>
+
+                    </button>
+
+                    <button
+                        class="direction-button"
+                        id="directionButton">
+
+                        📍
+                        <span>Directions</span>
+
+                    </button>
+
+                </div>
+
+
+                <!-- INFORMATION CARDS -->
+
+                <div class="information-grid">
+
+                    <div class="information-card">
+
+                        <span class="info-icon">
+                            📍
+                        </span>
+
+                        <div>
+
+                            <small>
+                                Address
+                            </small>
+
+                            <strong id="pageLocation">
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="information-card">
+
+                        <span class="info-icon">
+                            📞
+                        </span>
+
+                        <div>
+
+                            <small>
+                                Phone
+                            </small>
+
+                            <strong id="pagePhone">
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="information-card">
+
+                        <span class="info-icon">
+                            🕐
+                        </span>
+
+                        <div>
+
+                            <small>
+                                Status
+                            </small>
+
+                            <strong id="pageOpen">
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="information-card">
+
+                        <span class="info-icon">
+                            💰
+                        </span>
+
+                        <div>
+
+                            <small>
+                                Price
+                            </small>
+
+                            <strong id="pagePrice">
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- OPENING HOURS -->
+
+                <div class="details-section">
+
+                    <div class="details-title">
+
+                        <h2>
+                            🕐 Opening hours
+                        </h2>
+
+                    </div>
+
+                    <div
+                        class="hours-list"
+                        id="hoursList">
+                    </div>
+
+                </div>
+
+
+                <!-- MENU -->
+
+                <div class="details-section">
+
+                    <div class="details-title">
+
+                        <h2>
+                            🍽️ Menu
+                        </h2>
+
+                        <span>
+                            Popular items
+                        </span>
+
+                    </div>
+
+                    <div
+                        class="menu-grid"
+                        id="menuGrid">
+                    </div>
+
+                </div>
+
+
+               <!-- LOCATION -->
+
+                 <div class="details-section">
+
+                 <div class="details-title">
+
+        <h2>
+            📍 Location
+        </h2>
+
+    </div>
+
+    <div class="map-container">
+
+        <iframe
+            id="restaurantMap"
+            title="Restaurant location"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+
+        <div class="map-info">
+
+            <p id="mapLocation"></p>
+
+            <button
+                class="map-button"
+                id="mapButton">
+
+                Open in Google Maps
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+    </section>
+
+
+   <script src="script.js"></script>
+   </body>
+
+</html>
