@@ -9,7 +9,7 @@
    ========================================================= */
 
 const OVERPASS_URL =
-    "/.netlify/functions/restaurants";
+    "https://overpass-api.de/api/interpreter";
 
 const EL_JADIDA_BBOX =
     "33.18,-8.55,33.29,-8.42";
@@ -2705,7 +2705,87 @@ window.addEventListener(
 
     }
 );
+/* =========================================================
+   RESTAURANT TABS
+   ========================================================= */
 
+const restaurantTabs =
+    document.querySelectorAll(
+        ".restaurant-tab"
+    );
+
+
+const restaurantTabPanels =
+    document.querySelectorAll(
+        ".restaurant-tab-panel"
+    );
+
+
+restaurantTabs.forEach(
+    tab => {
+
+        tab.addEventListener(
+            "click",
+            () => {
+
+                const selectedTab =
+                    tab.dataset.tab;
+
+
+                /* REMOVE ACTIVE FROM ALL TABS */
+
+                restaurantTabs.forEach(
+                    otherTab => {
+
+                        otherTab.classList.remove(
+                            "active"
+                        );
+
+                    }
+                );
+
+
+                /* ADD ACTIVE TO CLICKED TAB */
+
+                tab.classList.add(
+                    "active"
+                );
+
+
+                /* HIDE ALL TAB CONTENT */
+
+                restaurantTabPanels.forEach(
+                    panel => {
+
+                        panel.classList.remove(
+                            "active"
+                        );
+
+                    }
+                );
+
+
+                /* SHOW SELECTED TAB */
+
+                const selectedPanel =
+                    document.getElementById(
+                        selectedTab + "Tab"
+                    );
+
+
+                if (selectedPanel) {
+
+                    selectedPanel.classList.add(
+                        "active"
+                    );
+
+                }
+
+            }
+        );
+
+    }
+);
 
 /* =========================================================
    START
