@@ -417,15 +417,19 @@
     </div>
 
 
-    <!-- ================= RESTAURANT PAGE ================= -->
+<!-- ================= RESTAURANT PAGE ================= -->
 
-    <section
-        class="restaurant-page"
-        id="restaurantPage">
+<section
+    class="restaurant-page"
+    id="restaurantPage">
 
-        <div class="container">
+    <div class="restaurant-detail-layout">
 
-            <!-- BACK BUTTON -->
+        <!-- ================= LEFT SIDEBAR ================= -->
+
+        <aside class="restaurant-sidebar">
+
+            <!-- BACK -->
 
             <button
                 class="back-button"
@@ -436,252 +440,811 @@
             </button>
 
 
-            <!-- HERO IMAGE -->
+            <!-- RESTAURANT IMAGE -->
 
-            <div class="restaurant-page-image">
+            <div class="restaurant-sidebar-image">
 
                 <img
                     id="pageImage"
                     src=""
                     alt="Restaurant">
 
+            </div>
+
+
+            <!-- RESTAURANT MAIN INFO -->
+
+            <div class="restaurant-sidebar-info">
+
                 <div
-                    class="page-status"
-                    id="pageStatus">
+                    class="page-category"
+                    id="pageCategory">
+                </div>
+
+                <h1 id="pageName">
+                </h1>
+
+                <div
+                    class="page-rating"
+                    id="pageRating">
+                </div>
+
+                <p
+                    class="page-description"
+                    id="pageDescription">
+                </p>
+
+            </div>
+
+
+            <!-- QUICK ACTIONS -->
+
+            <div class="sidebar-actions">
+
+                <button
+                    class="sidebar-action primary"
+                    id="callButton">
+
+                    📞
+                    <span>Call</span>
+
+                </button>
+
+                <button
+                    class="sidebar-action"
+                    id="directionButton">
+
+                    📍
+                    <span>Directions</span>
+
+                </button>
+
+            </div>
+
+
+            <!-- RESTAURANT DETAILS -->
+
+            <div class="sidebar-details">
+
+                <!-- ADDRESS -->
+
+                <div class="sidebar-detail">
+
+                    <div class="sidebar-detail-icon">
+                        📍
+                    </div>
+
+                    <div>
+
+                        <small>
+                            Address
+                        </small>
+
+                        <strong id="pageLocation">
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PHONE -->
+
+                <div class="sidebar-detail">
+
+                    <div class="sidebar-detail-icon">
+                        📞
+                    </div>
+
+                    <div>
+
+                        <small>
+                            Phone
+                        </small>
+
+                        <strong id="pagePhone">
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRICE -->
+
+                <div class="sidebar-detail">
+
+                    <div class="sidebar-detail-icon">
+                        💰
+                    </div>
+
+                    <div>
+
+                        <small>
+                            Price
+                        </small>
+
+                        <strong id="pagePrice">
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- STATUS -->
+
+                <div class="sidebar-detail">
+
+                    <div class="sidebar-detail-icon">
+                        🕐
+                    </div>
+
+                    <div>
+
+                        <small>
+                            Status
+                        </small>
+
+                        <strong id="pageOpen">
+                        </strong>
+
+                    </div>
+
                 </div>
 
             </div>
 
 
-            <!-- RESTAURANT INFORMATION -->
+            <!-- OPENING HOURS -->
 
-<div class="restaurant-page-content">
+            <div class="sidebar-section">
 
-    <div class="restaurant-main-info">
+                <div class="sidebar-section-title">
 
-        <span
-            class="page-category"
-            id="pageCategory">
-        </span>
+                    <h3>
+                        Opening hours
+                    </h3>
 
-        <span
-            id="pageCuisine"
-            class="page-cuisine"
-            style="display: none;">
-        </span>
+                </div>
 
-        <h1 id="pageName">
-        </h1>
+                <div
+                    class="hours-list"
+                    id="hoursList">
+                </div>
 
-        <div
-            class="page-rating"
-            id="pageRating">
-        </div>
-
-        <p
-            class="page-description"
-            id="pageDescription">
-        </p>
-
-    </div>
+            </div>
 
 
-                <!-- QUICK ACTIONS -->
+            <!-- WEBSITE -->
 
-                <div class="quick-actions">
+            <button
+                class="sidebar-website"
+                id="websiteButton">
 
-                    <button
-                        class="call-button"
-                        id="callButton">
+                🌐
+                Visit website
 
-                        📞
-                        <span>Call</span>
+            </button>
 
-                    </button>
 
-                    <button
-                        class="direction-button"
-                        id="directionButton">
+            <!-- MAP -->
 
-                        📍
-                        <span>Directions</span>
+            <div class="sidebar-map">
 
-                    </button>
+                <div class="sidebar-map-title">
+                    📍 Location
+                </div>
+
+                <div class="sidebar-map-address">
+                    <span id="mapLocation"></span>
+                </div>
+
+                <button
+                    class="map-button"
+                    id="mapButton">
+
+                    Open in Google Maps
+
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ================= RIGHT CONTENT ================= -->
+
+        <main class="restaurant-main-content">
+
+
+            <!-- RESTAURANT HEADER -->
+
+            <div class="restaurant-content-header">
+
+                <div>
+
+                    <span
+                        class="restaurant-status-badge"
+                        id="pageStatus">
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= TABS ================= -->
+
+            <nav class="restaurant-tabs">
+
+                <button
+                    class="restaurant-tab active"
+                    data-tab="overview">
+
+                    Overview
+
+                </button>
+
+                <button
+                    class="restaurant-tab"
+                    data-tab="menu">
+
+                    Menu
+
+                </button>
+
+                <button
+                    class="restaurant-tab"
+                    data-tab="reviews">
+
+                    Reviews
+
+                </button>
+
+                <button
+                    class="restaurant-tab"
+                    data-tab="photos">
+
+                    Photos
+
+                </button>
+
+                <button
+                    class="restaurant-tab"
+                    data-tab="info">
+
+                    Info
+
+                </button>
+
+            </nav>
+
+
+            <!-- ================= TAB CONTENT ================= -->
+
+            <div class="restaurant-tab-content">
+
+
+                <!-- ================= OVERVIEW ================= -->
+
+                <div
+                    class="restaurant-tab-panel active"
+                    id="overviewTab">
+
+                    <div class="detail-section-header">
+
+                        <div>
+
+                            <span class="small-title">
+                                RESTAURANT
+                            </span>
+
+                            <h2>
+                                About this restaurant
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="overview-description">
+
+                        <p id="overviewDescription">
+                        </p>
+
+                    </div>
+
+
+                    <!-- OVERVIEW INFORMATION -->
+
+                    <div class="overview-grid">
+
+
+                        <div class="overview-card">
+
+                            <span class="overview-icon">
+                                🍽️
+                            </span>
+
+                            <div>
+
+                                <small>
+                                    Cuisine
+                                </small>
+
+                                <strong
+                                    id="overviewCuisine">
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="overview-card">
+
+                            <span class="overview-icon">
+                                ⭐
+                            </span>
+
+                            <div>
+
+                                <small>
+                                    Rating
+                                </small>
+
+                                <strong
+                                    id="overviewRating">
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="overview-card">
+
+                            <span class="overview-icon">
+                                💰
+                            </span>
+
+                            <div>
+
+                                <small>
+                                    Price
+                                </small>
+
+                                <strong
+                                    id="overviewPrice">
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="overview-card">
+
+                            <span class="overview-icon">
+                                🕐
+                            </span>
+
+                            <div>
+
+                                <small>
+                                    Status
+                                </small>
+
+                                <strong
+                                    id="overviewStatus">
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- OVERVIEW MAP -->
+
+                    <div class="restaurant-detail-card">
+
+                        <div class="detail-card-header">
+
+                            <div>
+
+                                <span class="small-title">
+                                    FIND US
+                                </span>
+
+                                <h2>
+                                    Location
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="map-container">
+
+                            <iframe
+                                id="restaurantMap"
+                                title="Restaurant location"
+                                loading="lazy"
+                                allowfullscreen
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
 
-                <!-- INFORMATION CARDS -->
+                <!-- ================= MENU ================= -->
 
-                <div class="information-grid">
+                <div
+                    class="restaurant-tab-panel"
+                    id="menuTab">
 
-                    <div class="information-card">
-
-                        <span class="info-icon">
-                            📍
-                        </span>
+                    <div class="detail-section-header">
 
                         <div>
 
-                            <small>
-                                Address
-                            </small>
+                            <span class="small-title">
+                                FOOD & DRINKS
+                            </span>
 
-                            <strong id="pageLocation">
-                            </strong>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="information-card">
-
-                        <span class="info-icon">
-                            📞
-                        </span>
-
-                        <div>
-
-                            <small>
-                                Phone
-                            </small>
-
-                            <strong id="pagePhone">
-                            </strong>
+                            <h2>
+                                Menu
+                            </h2>
 
                         </div>
 
-                    </div>
-
-
-                    <div class="information-card">
-
-                        <span class="info-icon">
-                            🕐
-                        </span>
-
-                        <div>
-
-                            <small>
-                                Status
-                            </small>
-
-                            <strong id="pageOpen">
-                            </strong>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="information-card">
-
-                        <span class="info-icon">
-                            💰
-                        </span>
-
-                        <div>
-
-                            <small>
-                                Price
-                            </small>
-
-                            <strong id="pagePrice">
-                            </strong>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- OPENING HOURS -->
-
-                <div class="details-section">
-
-                    <div class="details-title">
-
-                        <h2>
-                            🕐 Opening hours
-                        </h2>
-
-                    </div>
-
-                    <div
-                        class="hours-list"
-                        id="hoursList">
-                    </div>
-
-                </div>
-
-
-                <!-- MENU -->
-
-                <div class="details-section">
-
-                    <div class="details-title">
-
-                        <h2>
-                            🍽️ Menu
-                        </h2>
-
-                        <span>
+                        <span class="section-note">
                             Popular items
                         </span>
 
                     </div>
 
+
+                    <!-- MENU CATEGORIES -->
+
                     <div
-                        class="menu-grid"
+                        class="menu-categories"
+                        id="menuCategories">
+
+                        <button
+                            class="menu-category active"
+                            data-menu-category="all">
+
+                            All
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- MENU ITEMS -->
+
+                    <div
+                        class="restaurant-menu-grid"
                         id="menuGrid">
                     </div>
 
                 </div>
 
 
-               <!-- LOCATION -->
+                <!-- ================= REVIEWS ================= -->
 
-                 <div class="details-section">
+                <div
+                    class="restaurant-tab-panel"
+                    id="reviewsTab">
 
-                 <div class="details-title">
+                    <div class="detail-section-header">
 
-        <h2>
-            📍 Location
-        </h2>
+                        <div>
+
+                            <span class="small-title">
+                                CUSTOMER FEEDBACK
+                            </span>
+
+                            <h2>
+                                Reviews
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="reviews-summary">
+
+                        <div class="reviews-score">
+
+                            <strong
+                                id="reviewsScore">
+                                —
+                            </strong>
+
+                            <div class="reviews-stars">
+                                ★★★★★
+                            </div>
+
+                            <span
+                                id="reviewsCount">
+                                No reviews available
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="reviews-list"
+                        id="reviewsList">
+
+                        <div class="empty-state">
+
+                            <div class="empty-state-icon">
+                                ⭐
+                            </div>
+
+                            <h3>
+                                Reviews coming soon
+                            </h3>
+
+                            <p>
+                                Restaurant reviews will appear here.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= PHOTOS ================= -->
+
+                <div
+                    class="restaurant-tab-panel"
+                    id="photosTab">
+
+                    <div class="detail-section-header">
+
+                        <div>
+
+                            <span class="small-title">
+                                GALLERY
+                            </span>
+
+                            <h2>
+                                Photos
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="restaurant-photo-grid"
+                        id="photoGrid">
+
+                        <div class="empty-state">
+
+                            <div class="empty-state-icon">
+                                📷
+                            </div>
+
+                            <h3>
+                                Photos coming soon
+                            </h3>
+
+                            <p>
+                                Restaurant photos will appear here.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= INFO ================= -->
+
+                <div
+                    class="restaurant-tab-panel"
+                    id="infoTab">
+
+                    <div class="detail-section-header">
+
+                        <div>
+
+                            <span class="small-title">
+                                DETAILS
+                            </span>
+
+                            <h2>
+                                Restaurant information
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-grid">
+
+
+                        <div class="info-card">
+
+                            <span class="info-card-icon">
+                                📍
+                            </span>
+
+                            <div>
+
+                                <small>
+                                    Address
+                                </small>
+
+                                <strong
+                                    id="infoLocation">
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="info-card">
+
+                            <span class="info-card-icon">
+                                📞
+                            </span>
+
+                            <div>
+
+                                <small>
+                                    Phone
+                                </small>
+
+                                <strong
+                                    id="infoPhone">
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="info-card">
+
+                            <span class="info-card-icon">
+                                💰
+                            </span>
+
+                            <div>
+
+                                <small>
+                                    Price range
+                                </small>
+
+                                <strong
+                                    id="infoPrice">
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="info-card">
+
+                            <span class="info-card-icon">
+                                🍽️
+                            </span>
+
+                            <div>
+
+                                <small>
+                                    Cuisine
+                                </small>
+
+                                <strong
+                                    id="infoCuisine">
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- FULL HOURS -->
+
+                    <div class="restaurant-detail-card">
+
+                        <div class="detail-card-header">
+
+                            <div>
+
+                                <span class="small-title">
+                                    SCHEDULE
+                                </span>
+
+                                <h2>
+                                    Opening hours
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            class="info-hours-list"
+                            id="infoHoursList">
+                        </div>
+
+                    </div>
+
+
+                    <!-- MAP -->
+
+                    <div class="restaurant-detail-card">
+
+                        <div class="detail-card-header">
+
+                            <div>
+
+                                <span class="small-title">
+                                    LOCATION
+                                </span>
+
+                                <h2>
+                                    Find this restaurant
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="map-container">
+
+                            <iframe
+                                id="infoRestaurantMap"
+                                title="Restaurant location"
+                                loading="lazy"
+                                allowfullscreen
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
 
     </div>
 
-    <div class="map-container">
-
-        <iframe
-            id="restaurantMap"
-            title="Restaurant location"
-            loading="lazy"
-            allowfullscreen
-            referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-
-        <div class="map-info">
-
-            <p id="mapLocation"></p>
-
-            <button
-                class="map-button"
-                id="mapButton">
-
-                Open in Google Maps
-
-            </button>
-
-        </div>
-
-    </div>
-
-</div>
-
-    </section>
+</section>
 
 
    <script src="script.js"></script>
